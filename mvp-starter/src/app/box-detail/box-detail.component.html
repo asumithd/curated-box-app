@@ -1,0 +1,14 @@
+<div *ngIf="box" class="p-4 max-w-xl mx-auto">
+  <img [src]="box.image" class="w-full h-64 object-cover rounded-lg mb-4" />
+  <h1 class="text-2xl font-bold mb-2">{{ box.title }}</h1>
+  <p class="text-gray-600 mb-4">{{ box.hobby }}</p>
+  <p class="mb-4">{{ box.description }}</p>
+  <ul class="list-disc ml-5 mb-4">
+    <li *ngFor="let item of box.contents">{{ item }}</li>
+  </ul>
+  <p class="text-xl font-semibold mb-4">R${{ box.price }}</p>
+  <button mat-raised-button color="primary" [routerLink]="['/subscribe', box._id]">
+    Subscribe Now
+  </button>
+</div>
+
